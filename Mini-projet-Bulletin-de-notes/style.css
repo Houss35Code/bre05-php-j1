@@ -1,0 +1,186 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.container > h2 {
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+/* Liste des étudiants */
+#students {
+    list-style: none;
+    display: grid;
+    gap: 20px;
+}
+
+#students > li {
+    transition: transform 0.3s ease;
+}
+
+#students > li:hover {
+    transform: translateY(-5px);
+}
+
+/* Articles (cartes étudiants) */
+article {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+article:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Header de l'article */
+article header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Section des notes */
+article section {
+    margin: 20px 0;
+}
+
+article section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+article section ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+article section ul li {
+    background: #f5f5f5;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Footer (moyenne) */
+article footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+}
+
+article footer h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ÉTAPE 4 : Classes CSS pour les couleurs selon la moyenne */
+
+/* Moyenne < 10 : ROUGE (échec) */
+.red {
+    border-left-color: #e74c3c;
+}
+
+.red header h1 {
+    color: #e74c3c;
+}
+
+.red footer h3 {
+    color: #e74c3c;
+}
+
+.red section ul li {
+    background: #fadbd8;
+    color: #c0392b;
+}
+
+/* Moyenne entre 10 et 13 : ORANGE (passable) */
+.orange {
+    border-left-color: #f39c12;
+}
+
+.orange header h1 {
+    color: #f39c12;
+}
+
+.orange footer h3 {
+    color: #f39c12;
+}
+
+.orange section ul li {
+    background: #fdebd0;
+    color: #d68910;
+}
+
+/* Moyenne > 13 : VERT (très bien) */
+.green {
+    border-left-color: #27ae60;
+}
+
+.green header h1 {
+    color: #27ae60;
+}
+
+.green footer h3 {
+    color: #27ae60;
+}
+
+.green section ul li {
+    background: #d5f4e6;
+    color: #1e8449;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    article {
+        padding: 20px;
+    }
+    
+    article section ul {
+        flex-direction: column;
+    }
+}
